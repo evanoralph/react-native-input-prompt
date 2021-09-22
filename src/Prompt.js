@@ -25,7 +25,8 @@ export default class Prompt extends Component {
 		titleStyle: PropTypes.object,
 		onChangeText: PropTypes.func,
 		onSubmit: PropTypes.func.isRequired,
-		onCancel: PropTypes.func.isRequired
+		onCancel: PropTypes.func.isRequired,
+		textInputStyle: PropTypes.object,
 	};
 
 	static defaultProps = {
@@ -79,7 +80,7 @@ export default class Prompt extends Component {
 						</Text>
 						<TextInput
 							placeholder={this.props.placeholder}
-							style={styles.textInput}
+							style={[styles.textInput, this.props.textInputStyle]}
 							onChangeText={this._onChangeText.bind(this)}
 							onSubmitEditing={this._onSubmit.bind(this)}
 							autoFocus={true}
